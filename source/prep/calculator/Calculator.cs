@@ -1,5 +1,7 @@
 using System;
 using System.Data;
+using System.Security;
+using System.Threading;
 
 namespace prep.calculator
 {
@@ -29,7 +31,8 @@ namespace prep.calculator
 
     public void shut_off()
     {
-      throw new NotImplementedException();
+        if (!Thread.CurrentPrincipal.IsInRole("blah"))
+            throw new SecurityException();
     }
   }
 }
