@@ -15,10 +15,10 @@ namespace prep.specs
 
     public class when_adding_two_numbers : concern
     {
-      Establish c = () =>
-      {
-        connection = depends.on<IDbConnection>();  
-      };
+       Establish c = () =>
+       {
+           connection = depends.on<IDbConnection>();
+       };
 
       Because b = () =>
         result = sut.add(2, 3);
