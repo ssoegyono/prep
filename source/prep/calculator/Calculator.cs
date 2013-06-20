@@ -18,7 +18,11 @@ namespace prep.calculator
                 throw new ArgumentException();
 
             connection.Open();
+            var command = connection.CreateCommand();
 
+            //command.CommandText = "select * from blah";
+            command.ExecuteNonQuery();
+            
             return i + i1;
         }
     }
